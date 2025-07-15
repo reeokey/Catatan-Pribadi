@@ -1,0 +1,195 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f2f7; /* warna biru muda */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #2196f3; /* warna biru untuk nama aplikasi ini */
+    margin-bottom: 30px;
+}
+
+/* gaya bagian masukan */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.input-section input[type="text"],
+.input-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbdefb;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-section input[type="text"]:focus,
+.input-section textarea:focus {
+    outline: none;
+    border-color: #2196f3; 
+}
+
+.input-section textarea {
+    resize: vertical; /* memungkinkan textarea diubah ukurannya secara vertikal */
+    min-height: 80px;
+}
+
+#addNoteBtn {
+    background-color: #2196f3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addNoteBtn:hover {
+    background-color: #1976d2; /* biru lebih gelap saat hover */
+    transform: translateY(-2px);
+}
+
+#addNoteBtn i {
+    font-size: 1.1rem;
+}
+
+/* gaya daftar catatan */
+#noteList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.note-item {
+    background-color: #e3f2fd; /* biru sangat muda untuk item catatan */
+    border: 1px solid #bbdefb;
+    border-left: 5px solid #2196f3; /* garis biru di kiri */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative; /* untuk positioning tombol hapus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.note-item:hover {
+    transform: translateY(-3px);
+}
+
+.note-item h3 {
+    margin: 0 0 5px 0;
+    color: #1976d2; /* biru gelap untuk judul */
+    font-size: 1.25rem;
+}
+
+.note-item p {
+    margin: 0;
+    color: #424242;
+    line-height: 1.6;
+    white-space: pre-wrap; /* mempertahankan spasi dan baris baru */
+}
+
+.note-date {
+    font-size: 0.85rem;
+    color: #757575;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ef5350; /* merah untuk ikon hapus */
+    cursor: pointer;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    color: #d32f2f; /* warna merah lebih gelap saat hover */
+    transform: scale(1.1);
+}
+
+/* penyesuaian responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .input-section input[type="text"],
+    .input-section textarea,
+    #addNoteBtn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .note-item {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .note-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .note-date {
+        font-size: 0.75rem;
+    }
+
+    .delete-btn {
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
